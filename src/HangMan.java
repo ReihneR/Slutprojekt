@@ -4,8 +4,18 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class HangMan {
+
+	static boolean reset; 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	
+	{
+		reset = true;
+		
+		while (reset)  {
+			
+						
+			
 		ArrayList<String> list1 = new ArrayList<>();
 
 		list1.add("paris");
@@ -26,6 +36,9 @@ public class HangMan {
 		//String ord = "hello world"; // Meningen som spelaren ska gissa på
 		int liv = 7; // Hur många försök spelaren får på sig att gissa fram till Meningen
 		metod(slump(list1), liv);
+
+		}
+
 	}
 	
 	public static void metod(String ratt_ord, int liv) {
@@ -160,7 +173,24 @@ public class HangMan {
 		if(liv == 0) {
 			System.out.println("Du förlora hahaha!");
 			System.out.println("Det rätta ordet var:  " + ratt_ord);
+			
+			
 		}
+		
+		System.out.println("vill du spela igen?");
+		System.out.println("Ja? tryck 1");
+		System.out.println("Nej? tryck 2");
+		int restartin = input.nextInt();
+		if(restartin == 1 ) {
+			reset = true;
+		}
+		
+		else {
+			
+			reset = false;
+			System.out.println("hejdå");
+		}
+		
 		
 		}
 
@@ -170,6 +200,6 @@ public class HangMan {
         return temp.get(rand.nextInt(temp.size()));
 	}
 
-	
+
 
 }
