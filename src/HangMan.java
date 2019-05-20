@@ -31,7 +31,7 @@ public class HangMan {
 	public static void metod(String ratt_ord, int liv) {
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("Låt oss spela hängagubbe, välj ett ord");
+		System.out.println("Låt oss spela hängagubbe, välj en bokstav");
 		
 		
 		
@@ -86,33 +86,74 @@ public class HangMan {
 			
 			
 			System.out.print(fyllning);
-			//System.out.println("      Återstående liv = " + liv);
-			if(liv == 7) {
-				System.out.println(" +---+\r\n" + 
-						"  |   |\r\n" + 
-						"      |\r\n" + 
-						"      |\r\n" + 
-						"      |\r\n" + 
-						"      |");	
+			System.out.println("      Återstående liv = " + liv);
+			if(liv == 6) {
+				System.out.println(
+						"                      +---+\r\n" + 
+						"                      |   |\r\n" + 
+						"                          |\r\n" + 
+						"                          |\r\n" + 
+						"                          |\r\n" + 
+						"                          |");	
 				
 				
 				
-				} else if (liv == 10) {
-					System.out.println(" +---+\r\n" + 
-							"  |   |\r\n" + 
-							"  O   |\r\n" + 
-							"      |\r\n" + 
-							"      |\r\n" + 
-							"      |");
+			   } else if (liv == 5) {
+					System.out.println(
+							"                      +---+\r\n" + 
+							"                      |   |\r\n" + 
+							"                      O   |\r\n" + 
+							"                          |\r\n" + 
+							"                          |\r\n" + 
+							"                          |");
 					
-				} else if (liv == 9) {
+				} else if (liv == 4) {
 					
-					System.out.println(" +---+\r\n" + 
-							"  |   |\r\n" + 
-							"  O   |\r\n" + 
-							"  |   |\r\n" + 
-							"      |\r\n" + 
-							"      |");
+					System.out.println(
+							"                      +---+\r\n" + 
+							"                      |   |\r\n" + 
+							"                      O   |\r\n" + 
+							"                      |   |\r\n" + 
+							"                          |\r\n" + 
+							"                          |");
+				}
+				
+				else if (liv == 3) {
+					System.out.println(
+							"                      +---+\r\n" + 
+							"                      |   |\r\n" + 
+							"                      O   |\r\n" + 
+							"                     /|   |\r\n" + 
+							"                          |\r\n" + 
+							"                          |");
+				}
+				else if (liv == 2) {
+					System.out.println(
+							"                      +---+\r\n" + 
+							"                      |   |\r\n" + 
+							"                      O   |\r\n" + 
+							"                     /|\\  |\r\n" + 
+							"                          |\r\n" + 
+							"                          | ");
+				}
+				else if (liv == 1) {
+					System.out.println(
+							"                      +---+\r\n" + 
+							"                      |   |\r\n" + 
+							"                      O   |\r\n" + 
+							"                     /|\\  |\r\n" + 
+							"                     /    |\r\n" + 
+							"                          |");
+				}
+				else if (liv == 0) {
+					System.out.println(
+							"                      +---+\r\n" + 
+							"                      |   |\r\n" + 
+							"                      O   |\r\n" + 
+							"                     /|\\  |\r\n" + 
+							"                     / \\  |\r\n" + 
+							"                          |");
+					
 				}
 			}
 		
@@ -125,6 +166,7 @@ public class HangMan {
 
 	public static String slump(ArrayList<String> temp) {
         Random rand = new Random(); 
+       
         return temp.get(rand.nextInt(temp.size()));
 	}
 
